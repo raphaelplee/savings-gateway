@@ -1,0 +1,15 @@
+#build and run standalone demo.
+mvnw package && java -jar target/savings-gateway-0.0.1-SNAPSHOT.jar
+
+#build the docker image for demo
+docker build -t demo/savings-gateway .
+
+#start dockers. set hostname to where savings services are running. set to wrong host to test timeout.
+docker run  -e "service.savings.hostname=http://192.168.0.103" -p 8080:8080 demo/savings-gateway
+
+#sample call in curl
+curl --location --request GET 'http://localhost:8080/savings/a/balance'
+
+curl --location --request PUT 'http://localhost:8080/savings/a/balance' \
+--header 'Content-Type: application/json' \
+--data-raw '{"amount":33.1}'
