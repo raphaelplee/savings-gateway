@@ -1,5 +1,5 @@
 Create an API Gateway to redirect the client request to Savings Services A and B. It should
-run on port 8080 - can be set in properties or pass in as docker startup value.
+run on port 8080 - can be set in properties or pass in as docker run environment variables.
 respond in less than 5 seconds, else throw a timeout. - use CircuitBreaker e.g. Resilience4J or Hystrix
 log to file all incoming requests as info level - use GlobalFilter and Slf4j,Logback File Appender
 
