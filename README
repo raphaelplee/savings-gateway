@@ -1,7 +1,9 @@
-Create an API Gateway to redirect the client request to Savings Services A and B. It should
-run on port 8080 - can be set in properties or pass in as docker run environment variables.
-respond in less than 5 seconds, else throw a timeout. - use CircuitBreaker e.g. Resilience4J or Hystrix
-log to file all incoming requests as info level - use GlobalFilter and Slf4j,Logback File Appender
+This is a simple Spring Cloud Gateway using default port 8080. It use CircuitBreaker Resilience4J to control 5 seconds timeout. It will log the request using GlobalFilter and Slf4j,Logback File Appender.
+
+We can scale the gateway by x-axis, having multiple instances of the gateway running as needed and add a layer such as a load balancer to route to the instances.
+We can monitor the health of our services using Spring Boot Actuator and a metrix tool e.g. Prometheus, Zabbix
+Timeout can be tested by pointing to the wrong host for the service.
+We can secure the gateway using load balancer and only expose the endpoint to intranet/vpn 
 
 #build and run standalone demo.
 mvnw package && java -jar target/savings-gateway-0.0.1-SNAPSHOT.jar
