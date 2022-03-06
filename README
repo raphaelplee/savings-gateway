@@ -1,3 +1,8 @@
+Create an API Gateway to redirect the client request to Savings Services A and B. It should
+run on port 8080 - can be set in properties or pass in as docker startup value.
+respond in less than 5 seconds, else throw a timeout. - use CircuitBreaker e.g. Resilience4J or Hystrix
+log to file all incoming requests as info level - use GlobalFilter and Slf4j,Logback File Appender
+
 #build and run standalone demo.
 mvnw package && java -jar target/savings-gateway-0.0.1-SNAPSHOT.jar
 
