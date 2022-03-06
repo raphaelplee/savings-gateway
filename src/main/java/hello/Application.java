@@ -35,7 +35,7 @@ public class Application {
                                 .rewritePath("/savings/a/", "/")
                                 .circuitBreaker(config -> config.setName("savingsA"))
                         )
-                        .uri(httphost + ":8083/"))
+                        .uri(httphost + ":8081/"))
 
                 .route(r -> r.path("/savings/b/**")
                         .filters(f -> f
