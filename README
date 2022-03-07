@@ -3,7 +3,7 @@ This is a Spring Cloud Gateway using default port 8080. It uses CircuitBreaker R
 We can scale the gateway by x-axis, having multiple instances of the gateway running as needed. Add a layer of load balancer and service discovery such as Eureka to route to the instances.
 We can monitor the health of our services using Spring Boot Actuator and a metrix tool e.g. Prometheus, Zabbix.
 Timeout can be tested by pointing to the wrong host for the service either by using docker or unit testing.
-We can secure the gateway by having authentication call to an OAuth2 Resource Server.
+We can secure the gateway by having authentication call to an OAuth2 Resource Server. We can also hide our gateway behind intranet/vpn and only expose the public endpoind.
 
 #build and run standalone demo.
 mvn package && java -jar target/savings-gateway-0.0.1-SNAPSHOT.jar
