@@ -1,4 +1,4 @@
-This is a simple Spring Cloud Gateway using default port 8080. It use CircuitBreaker Resilience4J to control 5 seconds timeout. It will log the request on INFO level using GlobalFilter and Slf4j,Logback File Appender on INFO level.
+This is a Spring Cloud Gateway using default port 8080. It uses CircuitBreaker Resilience4J to control 5 seconds timeout. It will log the request on INFO level using GlobalFilter and Slf4j,Logback File Appender on INFO level.
 
 We can scale the gateway by x-axis, having multiple instances of the gateway running as needed and add a layer such as a load balancer to route to the instances.
 We can monitor the health of our services using Spring Boot Actuator and a metrix tool e.g. Prometheus, Zabbix
